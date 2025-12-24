@@ -15,3 +15,8 @@ bin/
 
 # MacOS
 .DS_Store
+
+#token
+*.token
+credentials
+.env
