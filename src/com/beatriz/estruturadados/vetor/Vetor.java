@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class Vetor {
 	private String[] elementos;
 	private int tamanho;
+	private int posicao;
 	
 	public Vetor(int capacidade) {
 		this.elementos = new String[capacidade];
@@ -42,6 +43,21 @@ public class Vetor {
 			return false;
 		}
 	}
+	public boolean adiciona(int posicao,String elemento) {
+		if(!(posicao >= 0 && posicao < tamanho)) {
+			throw new IllegalArgumentException("POSIÇÃO INVÁLIDA");
+		}
+		for(int i=this.tamanho -1; i>= this.posicao; i--) {
+			this.elementos[i+1] = this.elementos[i];
+			
+		}
+		this.elementos[posicao] = elemento;
+		this.tamanho++;
+		
+		
+		return true;		
+		
+	}
 	
 	public int tamanho() {
 		return this.tamanho;
@@ -63,6 +79,8 @@ public class Vetor {
 		return -1;
 		
 	}
+	
+
 	@Override
 	public String toString() {
 		StringBuilder s = new StringBuilder();
