@@ -1,40 +1,20 @@
 package com.beatriz.estruturadados.vetor;
 
 import java.util.Arrays;
+public class VetorObjetos {
 
-public class Vetor {
-	private String[] elementos;
+
+	private Object[] elementos;
 	private int tamanho;
 	private int posicao;
-	
-	public Vetor(int capacidade) {
-		this.elementos = new String[capacidade];
+
+	public VetorObjetos(int capacidade) {
+		this.elementos = new Object[capacidade];
 		this.tamanho = 0;
 	}
-	
-	/*public void adiciona(String elemento) {
-		for(int i=0; i< this.elementos.length; i++) {
-			if (this.elementos[i] == null) {
-				this.elementos[i] = elemento;
-				break;
-			}
-		}
-		
-	}*/
 
-	/*public void adiciona(String elemento) throws Exception {
-		
-		if (this.tamanho < this.elementos.length) {
-			this.elementos[this.tamanho ] = elemento;
-			this.tamanho++;
-			
-		}else {
-			throw new Exception ("Vetor já está cheio, não é possível adicionar mais elementos!!");
-		}
-	
-		
-	}*/
-	public boolean adiciona(String elemento) {
+
+	public boolean adiciona(Object elemento) {
 		aumentaCapacidade();
 		if(this.tamanho < this.elementos.length) {
 			this.elementos[this.tamanho] = elemento;
@@ -44,33 +24,33 @@ public class Vetor {
 			return false;
 		}
 	}
-	
-	
-	public boolean adiciona(int posicao,String elemento) {
+
+
+	public boolean adiciona(int posicao,Object elemento) {
 		aumentaCapacidade();
 		if(!(posicao >= 0 && posicao < tamanho)) {
 			throw new IllegalArgumentException("POSIÇÃO INVÁLIDA");
 		}
 		for(int i=this.tamanho -1; i>= this.posicao; i--) {
 			this.elementos[i+1] = this.elementos[i];
-			
+
 		}
 		this.elementos[posicao] = elemento;
 		this.tamanho++;
-		
-		
+
+
 		return true;		
-		
+
 	}
 	private void aumentaCapacidade( ) {
 		if(this.tamanho == this.elementos.length) {
-			String[] elementosNovos = new String[this.elementos.length *2];
+			Object[] elementosNovos = new Object[this.elementos.length *2];
 			for(int i =0; i < this.elementos.length; i++) {
 				elementosNovos[i] = this.elementos[i];
 			}
 			this.elementos = elementosNovos;
 		}
-		
+
 	}
 	//B G D E F -> POSIÇÃO A SER REMOVIDA É 1 (G)
 	//0 1 2 3 4 -> TAMANHO É 5
@@ -85,30 +65,30 @@ public class Vetor {
 			this.elementos[i] = this.elementos[i+1];
 		}
 		this.tamanho--;
-		
-		
+
+
 	}
 	public int tamanho() {
 		return this.tamanho;
 	}
 
-	public String busca(int posicao) {
+	public Object busca(int posicao) {
 		if(!(posicao >= 0 && posicao < tamanho)) {
 			throw new IllegalArgumentException("POSIÇÃO INVÁLIDA");
 		}
 		return elementos[posicao];
-		
+
 	}
-	public int busca(String elemento) {
+	public int busca(Object elemento) {
 		for(int i =0; i<this.tamanho; i++) {
 			if(this.elementos[i].equals(elemento)) {
 				return i;
 			}
 		}
 		return -1;
-		
+
 	}
-	
+
 
 	@Override
 	public String toString() {
@@ -122,11 +102,11 @@ public class Vetor {
 			s.append(this.elementos[this.tamanho-1]);
 		}
 		s.append("]");
-		
+
 		return s.toString();
 	}
-	
-	
+
+
 }
 
 /*
@@ -136,3 +116,5 @@ public class Vetor {
  * 
  * 
  */
+
+
