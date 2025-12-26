@@ -7,7 +7,7 @@ public class Lista <T>{
 	
 	
 	
-//maneira elegante de in
+
 	public Lista(int capacidade) {
 		this.elementos = (T[]) new Object[capacidade];
 		this.tamanho = 0;
