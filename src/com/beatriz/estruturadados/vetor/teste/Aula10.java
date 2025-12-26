@@ -1,4 +1,7 @@
-package com.beatriz.estruturadados.vetor;
+package com.beatriz.estruturadados.vetor.teste;
+
+import com.beatriz.estruturadados.vetor.Contato;
+import com.beatriz.estruturadados.vetor.VetorObjetos;
 
 public class Aula10 {
 
