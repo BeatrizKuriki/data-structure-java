@@ -27,6 +27,7 @@ public class Aula12 {
 		System.out.println(posicao);
 		System.out.println(arrayList.get(1));
 		System.out.println(arrayList.size());
+		
 	}
 	
 	
